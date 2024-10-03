@@ -2,7 +2,7 @@
 @import url("../var/vars.css");
 
 
-html body {
+body {
     display: block;
     font-size: 16px;
     line-height: 1.6;
@@ -25,6 +25,8 @@ html body {
     -ms-user-select: none;
     -khtml-user-select: none;
     user-select: none;
+
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
     -webkit-user-drag: none;
     -moz-user-drag: none;
