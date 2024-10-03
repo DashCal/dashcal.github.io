@@ -11,16 +11,40 @@
     <link rel="stylesheet" href="stastic/style/style.css">
 
     <script type="text/javascript">
-        document.addEventListener("DOMContentLoaded", function () {
+        // document.addEventListener("DOMContentLoaded", function () {
+        //     // Select the element with class "home loading"
+        //     var loadingElement = document.querySelector('.Home.Loading');
+
+        //     // Check if the element exists to avoid errors
+        //     if (loadingElement) {
+        //         // Remove the "loading" class
+        //         loadingElement.classList.remove('Loading');
+        //     }
+        // });
+
+        window.onload = function () {
             // Select the element with class "home loading"
-            var loadingElement = document.querySelector('.Home.Loading');
+            var loadingBlur = document.querySelector('.Home.Loading');
 
             // Check if the element exists to avoid errors
-            if (loadingElement) {
+            if (loadingBlur) {
                 // Remove the "loading" class
-                loadingElement.classList.remove('Loading');
+                loadingBlur.classList.remove('Loading');
             }
-        });
+
+            // var LoadingCircle = document.querySelector('.LoadingCircle.Loading');
+
+            // // Check if the element exists to avoid errors
+            // if (LoadingCircle) {
+            //     // Remove the "loading" class
+            //     LoadingCircle.classList.remove('Loading');
+            // }
+
+            var loadingCircleElement = document.querySelector('.LoadingCircle');
+            if (loadingCircleElement) {
+                loadingCircleElement.parentNode.removeChild(loadingCircleElement);
+            }
+        };
     </script>
 </head>
 
@@ -31,7 +55,7 @@
         }
 
         .Home {
-            transition: filter 0.5 ease;
+            transition: filter 0.6s ease;
         }
     </style>
     <div class="Home Loading">
@@ -137,7 +161,7 @@
                 </div>
                 <div class="TheRectangle">
                     <img aria-label="The Rectangle"
-                        style="position: absolute;left: 0; bottom: 10%; height: 50%; width: 92%;"
+                        style="position: absolute; left: 0; bottom: 10%; height: 50%; width: 92%;"
                         src="/stastic/style/patch/patch_center.svg">
                 </div>
                 <div class="Clicker" style="position: absolute; right: 0; top: 54px; padding: 6px 26px 6px 10px;">
@@ -344,6 +368,57 @@
                     <span style="font-size: 0.8rem;">© 2024 Local Wu. All Rights Reserved.</span>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <style>
+        .LoadingContent span {
+            display: block;
+            width: fit-content;
+            height: 1.2rem;
+            font-weight: 500;
+            font-size: 1rem;
+            line-height: 1.2rem;
+            letter-spacing: .01em;
+            color: inherit;
+            flex: 0 0 auto;
+            margin: 0 auto;
+            z-index: 100;
+        }
+
+        .LoadingCircle.Loading {
+            opacity: 1.0;
+        }
+
+        .LoadingCircle {
+            transition: opacity 0.5s ease;
+        }
+    </style>
+    <div class="LoadingCircle Loading" style="position: fixed; top:36%; left: 50%; transform: translateX(-50%);">
+        <div class="LoadingContent"
+            style="width: fit-content; height: fit-content; padding: 8px 20px 16px 20px; font-weight: 600; background-color: #eee; border: 1px solid #aaa; border-radius: 6px;">
+            <div style="width: 80px;height: 80px; margin: 0 auto;">
+
+                <svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+                    <style>
+                        @keyframes spin {
+                            to {
+                                transform: rotate(360deg);
+                            }
+                        }
+
+                        .spin {
+                            transform-origin: center;
+                            animation: spin 1.6s linear infinite;
+                        }
+                    </style>
+                    <circle class="spin" cx="400" cy="400" fill="none" r="200" stroke-width="40" stroke="#666"
+                        stroke-dasharray="800 1400" stroke-linecap="round" />
+                </svg>
+
+            </div>
+            <span>It's Coming...</span>
+            <span>马上就好</span>
         </div>
     </div>
 </body>
