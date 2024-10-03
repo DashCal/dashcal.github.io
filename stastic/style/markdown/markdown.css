@@ -4,7 +4,7 @@ code[class*=language-],
 pre[class*=language-] {
     color: #333;
     background: 0 0;
-    font-family: 'IBM_Plex_Mono', 'JetBrains_Mono', Consolas, Courier, Inter, 'Noto_Sans_SC', 'HarmonyOS_Regular', PingFang SC, 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif;
+    font-family: 'IBM_Plex_Mono', 'JetBrains_Mono', Consolas, Courier, Inter, 'Noto_Sans_SC', PingFang SC, 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif;
     text-align: left;
     white-space: pre;
     word-spacing: normal;
@@ -430,7 +430,7 @@ html body dl dd {
 }
 
 html body code {
-    font-family: 'IBM_Plex_Mono', 'JetBrains_Mono', Consolas, Courier, Inter, 'Noto_Sans_SC', 'HarmonyOS_Regular', PingFang SC, 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif;
+    font-family: 'IBM_Plex_Mono', 'JetBrains_Mono', Consolas, Courier, Inter, 'Noto_Sans_SC', PingFang SC, 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif;
     font-size: .85em;
     color: #000;
     background-color: #f0f0f0;
