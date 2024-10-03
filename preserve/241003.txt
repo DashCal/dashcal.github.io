@@ -1,0 +1,81 @@
+<div class="theArticle">
+
+            <h1 id="inspire-傅里叶变换和相同的影响波">[INSPIRE] 傅里叶变换和相同的影响波 </h1>
+            <h1 id="关于将采样的点进行滤波我可以对采样点进行傅里叶变换拆成对个波找到采样信息的共性波吗">关于将采样的点进行滤波，我可以对采样点进行傅里叶变换拆成对个波，找到采样信息的共性波吗？ </h1>
+            <p>对采样的点进行滤波，确实可以通过傅里叶变换来分析和处理。傅里叶变换是一种<strong>将信号从时间域转换到频率域</strong>的数学工具，它可以将一个复杂的信号拆分成<strong>不同频率的简单正弦波或余弦波的叠加</strong>。
+            </p>
+            <p>当你对采样点进行傅里叶变换后，你可以得到该信号的频谱，即<strong>信号中各个频率分量的幅度和相位信息</strong>。通过分析频谱，你可以<strong>找到信号中的主要频率成分</strong>，也就是**“共性波”**。
+            </p>
+            <p>接下来，你可以根据需要<strong>对这些频率成分进行滤波处理</strong>。例如，你可以<strong>设计一个滤波器来保留某些特定频率范围内的成分</strong>，而抑制其他频率的成分。这样，你就可以去除信号中的噪声或干扰，提取出有用的信息。
+            </p>
+            <p>需要注意的是，滤波器的设计需要根据具体的应用场景和需求来确定。不同的滤波器类型（如低通、高通、带通等）和参数设置会对滤波效果产生不同的影响。因此，在进行滤波处理时，需要仔细选择和设计滤波器，以确保得到满意的结果。
+            </p>
+            <p>总之，通过对采样点进行傅里叶变换和滤波处理，你可以找到采样信息的共性波，并对信号进行有效的分析和处理。</p>
+            <p>#例子<br>
+                当然可以！在 JavaScript 中，我们可以使用傅里叶变换库（如 fft.js 或 fftjs）来对采样点进行傅里叶变换，并分析和筛选频率成分。不过，由于 JavaScript
+                中并没有内置的傅里叶变换函数，我们通常需要借助第三方库来实现。</p>
+            <p>以下是一个简化的例子，展示了如何使用 JavaScript（配合一个假设的傅里叶变换库）来分解采样点并筛选特定频率成分：</p>
+            <pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript"><code><span class="token comment">// 假设有一个傅里叶变换库 fftjs</span>
+            <span class="token keyword keyword-const">const</span> fftjs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"fftjs"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 实际上你需要安装并使用一个真正的傅里叶变换库</span>
+            
+            <span class="token comment">// 假设我们有一些采样点数据</span>
+            <span class="token keyword keyword-const">const</span> sampleRate <span class="token operator">=</span> <span class="token number">1000</span><span class="token punctuation">;</span> <span class="token comment">// 采样率，例如每秒1000个样本</span>
+            <span class="token keyword keyword-const">const</span> samples <span class="token operator">=</span> <span class="token punctuation">[</span>
+              <span class="token comment">/* ... 这里填充你的采样点数据 ... */</span>
+            <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// 采样点数组</span>
+            
+            <span class="token comment">// 进行傅里叶变换</span>
+            <span class="token keyword keyword-const">const</span> fft <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">fftjs<span class="token punctuation">.</span>aFFT</span><span class="token punctuation">(</span>samples<span class="token punctuation">.</span><span class="token property-access">length</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword keyword-const">const</span> spectrum <span class="token operator">=</span> fft<span class="token punctuation">.</span><span class="token method function property-access">forward</span><span class="token punctuation">(</span>samples<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            
+            <span class="token comment">// 分解后的频率成分存储在spectrum中</span>
+            <span class="token comment">// 现在，我们假设要筛选频率在50到150之间的成分</span>
+            <span class="token keyword keyword-const">const</span> lowFrequency <span class="token operator">=</span> <span class="token number">50</span><span class="token punctuation">;</span>
+            <span class="token keyword keyword-const">const</span> highFrequency <span class="token operator">=</span> <span class="token number">150</span><span class="token punctuation">;</span>
+            <span class="token keyword keyword-const">const</span> binSize <span class="token operator">=</span> sampleRate <span class="token operator">/</span> samples<span class="token punctuation">.</span><span class="token property-access">length</span><span class="token punctuation">;</span> <span class="token comment">// 每个频率bin的大小</span>
+            <span class="token keyword keyword-const">const</span> lowBin <span class="token operator">=</span> <span class="token known-class-name class-name">Math</span><span class="token punctuation">.</span><span class="token method function property-access">round</span><span class="token punctuation">(</span>lowFrequency <span class="token operator">/</span> binSize<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword keyword-const">const</span> highBin <span class="token operator">=</span> <span class="token known-class-name class-name">Math</span><span class="token punctuation">.</span><span class="token method function property-access">round</span><span class="token punctuation">(</span>highFrequency <span class="token operator">/</span> binSize<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            
+            <span class="token comment">// 创建一个新的数组来存储筛选后的频率成分</span>
+            <span class="token keyword keyword-const">const</span> filteredSpectrum <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+            
+            <span class="token comment">// 遍历频谱，筛选特定频率范围内的成分</span>
+            <span class="token keyword control-flow keyword-for">for</span> <span class="token punctuation">(</span><span class="token keyword keyword-let">let</span> i <span class="token operator">=</span> lowBin<span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> highBin<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+              <span class="token comment">// 通常，我们需要处理频谱的实部和虚部</span>
+              <span class="token keyword keyword-const">const</span> real <span class="token operator">=</span> spectrum<span class="token punctuation">.</span><span class="token property-access">re</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+              <span class="token keyword keyword-const">const</span> imag <span class="token operator">=</span> spectrum<span class="token punctuation">.</span><span class="token property-access">im</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            
+              <span class="token comment">// 假设我们只保留幅度信息</span>
+              <span class="token keyword keyword-const">const</span> magnitude <span class="token operator">=</span> <span class="token known-class-name class-name">Math</span><span class="token punctuation">.</span><span class="token method function property-access">sqrt</span><span class="token punctuation">(</span>real <span class="token operator">*</span> real <span class="token operator">+</span> imag <span class="token operator">*</span> imag<span class="token punctuation">)</span><span class="token punctuation">;</span>
+              filteredSpectrum<span class="token punctuation">.</span><span class="token method function property-access">push</span><span class="token punctuation">(</span>magnitude<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            
+            <span class="token comment">// filteredSpectrum现在包含了筛选后频率范围内的幅度信息</span>
+            <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>filteredSpectrum<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            
+            <span class="token comment">// 如果需要，你可以使用逆傅里叶变换来重建筛选后的信号</span>
+            <span class="token comment">// const filteredSamples = fft.inverse(filteredSpectrum);</span>
+            <span class="token comment">// ... 这里处理filteredSamples ...</span>
+            </code></pre>
+            <p>请注意，上面的代码是一个简化的例子，用于展示概念。实际上，你需要一个真正的傅里叶变换库来执行 forward 和 inverse 方法，并且你可能需要处理复数运算（实部和虚部）。</p>
+            <p>此外，筛选特定频率范围时，你需要根据采样率和样本数量来计算每个频率 bin 的大小，并确定哪些 bin 落在你的筛选范围内。然后，你可以处理这些 bin 对应的频谱值，例如仅保留它们的幅度信息。</p>
+            <p>由于 JavaScript 和傅里叶变换都是复杂的主题，这里只提供了一个非常基础的示例。如果你需要更详细或更精确的实现，建议查阅有关傅里叶变换和信号处理的专业资料，以及适用于 JavaScript
+                的傅里叶变换库文档。</p>
+
+
+            <div class="copyright_bar no_select" ondragstart="return false" align="center" style="">
+                <img class="no_select"
+                    src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9VXVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/2wBDARweHigjKE4rK06kbl1upKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKT/wAARCAApAHgDAREAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDpqACgCK4nS3haWQ/Kvp1PsPegDP0Zriea7urngs/lqoOQoXt+ZoA1aACgAoAKACgAoAKACgAoAKACgAoATpQBlXUzTRSXo5ihB+zj++/Td9M9PzoA0LSAWtrHCpzsXBPqe5/OgCagAoAKACgAoAKACgAoAydb1F4oza2mWuHwpI/5ZgnA/E9qANOJPLiRNxbaAMnqaAH0AFAFWSCa5ZlncJBnHloeXH+0f6D86AI9SA8q3gUAB50XA9Ac/wBKAL1ADXdUUs7BVHJJOAKAI7a7t7oMbeZJNpwdp6UATUAFABQA1XRywVlYqcHBzg0ACsrruRgw9Qc0AV768FsoRB5lw/EcY6sf8PegCjHaeVc2Vsx3PlrmZv7zDj+bfpQBsUAFABQAUAUrn95qdnGOdgeU/ltH/oVAFwkKCSQAOpNAGNrV0lxbIlvmYLMhcp93Gehbp6UAOivoTq0kjRyxbYQjKYjkHOe2e1AFi4u5riJ47GGRnZSPMdSir788k/SgCpo8en2KNI9yBckYk85trL6jBoAuT6gzQv8AYoJZ3wcNtKr+Z6/hQBn6VaK9uIrdpFjcBribkM7f3R7epoAuQ2V5BH9lhnjitlYlXAzIATnHPH40AW7WyhtSWQM0jfekc7mb8aAIboiHU7WZuEdWhJ9CcEfyoAvUAVZrz995FsnnTD73OFQf7R/p1oAozaWLWRp4Q80Z5eIu24D/AGTn9DQBMh014w63ZC+904x/49xQBFY2UF3NPdHzWjLbISZXyVHU5z0JzQBdGnWgIJhD4/vkt/OgCw8aPGY3UFCMFSOCKAGQW8VumyFAqk5PufegCWgBpRGIZlUkdCRQA6gAoAKACgCO4gjuYWhlXcjDkUAVP7OkI2NqF0Y/7uQD/wB9YzQBat4IraMRwoEUdhQBLQBzF7/yGX/z3oA6VPuL9BQA6gAoAKACgAoAKACgAoAKACgAoAKAP//Z"
+                    style="zoom:50%;">
+                <p> </p>
+                <p>Copyright © 2024 <strong>Local Wu</strong>. All rights reserved.<br>
+                    <a href="https://github.com/localwu/">Github Page</a> | <a
+                        href="https://github.com/localwu/">Copyright
+                        Policy</a> | <a href="https://github.com/localwu/">Technical Assistance</a> | <a
+                        href="mailto:localwu@qq.com">Contact by Mail</a>
+                </p>
+                <!-- <p><em>End of document</em></p> -->
+                <p> </p>
+            </div>
+
+        </div>

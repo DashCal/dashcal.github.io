@@ -1,0 +1,19 @@
+@import url("imports.css");
+
+.no_select {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+    cursor: pointor;
+}
+
+.copyright_bar {
+    border-radius: 10px;
+    border: 2px #ddd solid;
+    padding: 30px 10px 0px 10px;
+    margin-bottom: 64px;
+    background-color: #fff;
+    font-size: 14px;
+}

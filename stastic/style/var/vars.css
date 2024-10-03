@@ -1,0 +1,169 @@
+@custom-media --viewport-small (max-width: 1024px);
+@custom-media --viewport-small-inv (min-width: 1025px);
+
+@custom-media --viewport-xsmall (max-width: 640px);
+@custom-media --viewport-xsmall-inv (min-width: 641px);
+
+/* must match actual value of:; (--body-max-width - 1) */
+@custom-media --viewport-body-max-width (min-width: 1215px);
+
+/* for window width <= 600 */
+/*@media only screen and (max-width: 600px)*/
+
+/* for window width >= 1600 */
+/*@media only screen and (min-width: 1599px)*/
+
+:root {
+  /*
+  Font size is the basis of all other measurements.
+  It's either constant or viewport-relative. Choose one.
+
+  Constant: */
+  --fontSize: 16px;
+  /*
+
+  Viewport-relative (100% / EMs-across-viewport) */
+  /*--fontSize: calc(100vw / 80);*/
+}
+
+/*@media only screen and (max-width: 600px) { :root {
+  --fontSize: calc(100vw / 30);
+}}*/
+:root {
+  --sansFont: "Inter";
+  --titleFont: "InterDisplay";
+  --monoFont: "IBM Plex Mono";
+
+  --fontSize: 16px;
+
+  --unit: calc(var(--fontSize) * 0.5);
+
+  /* line height is the basis for vertical spacing */
+  --line-height: calc(var(--fontSize) * 1.5);
+
+  /* horizontal and vertical spacing basis */
+  /*--baseline: calc(var(--line-height) / 2);*/
+  --baseline: var(--unit);
+
+  /* padding on the body block */
+  --body-padding-x: calc(var(--unit) * 6);
+  --body-padding-y: calc(var(--unit) * 6);
+
+  /* used for outline on body, to extend it visually */
+  --body-bleed: calc(var(--unit) * 16);
+
+  --body-max-width: calc(var(--unit) * 152);
+
+  /* spacing around blocks */
+  --blockSpacingTop: 0px;
+  --blockSpacingBottom: var(--line-height);
+
+  /* horizontal rule */
+  --hr-weight: 2px;
+
+  /* heading metrics */
+  --h1-margin-bottom: var(--line-height);
+  --h3-margin-bottom: calc(var(--unit) * 0.5);
+
+  /* grid & column spacing */
+  --column-gap: calc(var(--unit) * 8);
+  --row-gap: calc(var(--unit) * 8);
+  --column-gap-compact: calc(var(--unit) * 4);
+  --row-gap-compact: calc(var(--unit) * 2);
+
+  /* 1 pixel */
+  --displayScale: 1;
+  --pixel: 1px;
+
+  /* Colors */
+  --foreground-color-rgb: 0, 0, 0;
+  --foreground-color-a: 1;
+  --foreground-color-a-dimmed: 0.4;
+  --foreground-color: rgba(var(--foreground-color-rgb), var(--foreground-color-a));
+  --foreground-color-dimmed: rgba(var(--foreground-color-rgb), var(--foreground-color-a-dimmed));
+  --background-color: white;
+  --letterbox-color: #333;
+  --box-link-hover-color: rgba(var(--foreground-color-rgb), 0.07);
+
+  --accent-color: var(--blue);
+  /* hyperlinks */
+  --accent-color-darkmode: color-mod(var(--blue) lightness(80%));
+  --menu-active-color: var(--foreground-color);
+  --menu-inactive-color: rgba(0, 0, 0, 0.3);
+
+  /* Generic colors */
+  /*--red:          rgb(238, 39, 17);*/
+  --red: #F03009;
+  --red-orange: #ff2e00;
+  --hot-orange: #FF5C00;
+  /* favicon */
+  --orange: #ff7105;
+  --brown: #716558;
+  --warm-yellow: #FFE310;
+  --yellow: #FFF310;
+  /*--yellow:       rgb(249, 191, 15);*/
+  --light-yellow: rgb(255, 255, 179);
+  --green: rgb(18, 192, 91);
+  --ocean-green: #008f5d;
+  --pear-green: rgb(119, 221, 134);
+  --blue: rgb(3, 102, 214);
+  --sunset-pink: #ff7b81;
+  --light-pink: #ffb3ba;
+  --xlight-pink: #ffd1d9;
+
+  @supports (color: color(display-p3 1 1 1)) {
+    /*@media (color-gamut: p3) {*/
+    --red: color(display-p3 0.94 0.19 0.04);
+    --red-orange: color(display-p3 0.97 0.26 0.11);
+    --hot-orange: color(display-p3 1.0 0.36 0.0);
+    --orange: color(display-p3 0.99 0.49 0.16);
+    --brown: color(display-p3 0.44 0.393 0.341);
+    --warm-yellow: color(display-p3 1.0 0.87 0.05);
+    --yellow: color(display-p3 1.0 0.96 0.05);
+    --light-yellow: color(display-p3 1.0 1.0 0.7);
+    --ocean-green: color(display-p3 0.0 0.55 0.37);
+    --sunset-pink: color(display-p3 1 0.495 0.54);
+    --light-pink: color(display-p3 1 0.69 0.718);
+    --xlight-pink: color(display-p3 1 0.845 0.869);
+  }
+}
+
+/* @supports (font-variation-settings: normal) {:root {
+  --sansFont: "Inter var";
+  --titleFont: "InterDisplay var";
+}} */
+
+@media only screen and (min-resolution: 1.5dppx) {
+  :root {
+    --displayScale: 1.5;
+    --pixel: 0.75px;
+  }
+}
+
+@media only screen and (min-resolution: 2.0dppx) {
+  :root {
+    --displayScale: 2;
+    --pixel: 0.5px;
+  }
+}
+
+@media only screen and (min-resolution: 2.5dppx) {
+  :root {
+    --displayScale: 2.5;
+    --pixel: 0.4px;
+  }
+}
+
+@media only screen and (min-resolution: 3.0dppx) {
+  :root {
+    --displayScale: 3;
+    --pixel: 0.3333333333px;
+  }
+}
+
+@media only screen and (min-resolution: 3.5dppx) {
+  :root {
+    --displayScale: 4;
+    --pixel: 0.25px;
+  }
+}
