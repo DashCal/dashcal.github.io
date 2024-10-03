@@ -9,13 +9,32 @@
     <link rel="icon" sizes="any" mask="" href="stastic/style/icon/icon.svg">
 
     <link rel="stylesheet" href="stastic/style/style.css">
+
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function () {
+            // Select the element with class "home loading"
+            var loadingElement = document.querySelector('.Home.Loading');
+
+            // Check if the element exists to avoid errors
+            if (loadingElement) {
+                // Remove the "loading" class
+                loadingElement.classList.remove('Loading');
+            }
+        });
+    </script>
 </head>
 
 <body>
     <style>
-        .Home {}
+        .Home.Loading {
+            filter: blur(6px);
+        }
+
+        .Home {
+            transition: filter 0.5 ease;
+        }
     </style>
-    <div class="Home">
+    <div class="Home Loading">
         <style>
             .HomeTop {
                 display: flex;
@@ -256,35 +275,20 @@
                 <p>由于 JavaScript 和傅里叶变换都是复杂的主题，这里只提供了一个非常基础的示例。如果你需要更详细或更精确的实现，建议查阅有关傅里叶变换和信号处理的专业资料，以及适用于 JavaScript
                     的傅里叶变换库文档。</p>
             </div>
-            <iframe src="http://127.0.0.1:5500/index.html" style="height: 200px;"></iframe>
 
             <script>
                 function crossDomainRequest() {
-
                     var iframe = document.createElement("iframe");
-
                     iframe.src = "https://www.baidu.com/s?wd=%E5%82%85%E9%87%8C%E5%8F%B6%20site%3Alocalspage.github.io"; // 要访问的跨域资源
-
                     iframe.style.display = "none";
-
                     document.body.appendChild(iframe);
-
-
-
                     // 等待iframe加载完成后进行操作
-
                     iframe.onload = function () {
-
                         var data = iframe.contentWindow.document.body.innerText; // 获取iframe中的数据
-
                         console.log(data);
-
                         document.body.removeChild(iframe); // 移除iframe
-
                     };
-
                 }
-
             </script>
             <button onclick="crossDomainRequest()">发起跨域请求</button>
         </div>
