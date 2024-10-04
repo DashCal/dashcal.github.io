@@ -1,1 +1,1 @@
-# localspage.github.io
+# localspages
