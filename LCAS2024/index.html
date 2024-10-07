@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Location Awards 2024 - Local Wu</title>
+    <title>坐落奖 Location Awards 2024 - Local Wu</title>
     <link rel="shortcut icon" href="../stastic/style/icon/icon_Regular.png" type="image/png">
     <link rel="icon" sizes="any" mask="" href="../stastic/style/icon/icon.svg">
 
@@ -25,16 +25,17 @@
             margin: 0 auto;
         }
 
-        .BGImage {}
-
         .AwardBackground {
-            background: url("Gold_LAS.jpg");
-            background-repeat: no-repeat;
-            background-size: 100% 100%;
-            filter: blur(12px);
-            min-height: 100vh;
+            /* background: linear-gradient(45deg,
+                    black 15%,
+                    #104CBC 45%,
+                    black 70%); */
+            background: black;
+            background-repeat: repeat;
             height: fit-content;
+            min-height: 100vh;
             /* 根据需要调整高度 */
+            width: fit-content;
             width: 100%;
             /* 宽度占满容器 */
             display: flex;
@@ -47,7 +48,7 @@
             flex-direction: column;
             /* 文字垂直居中 */
             text-align: center;
-            padding: 20px;
+            padding: 16px;
             box-sizing: border-box;
         }
 
@@ -83,15 +84,55 @@
             color: black;
             font-size: 1em;
         }
+
+        .logo-container {
+            position: relative;
+            margin: 0 auto;
+            width: 300px;
+            /* 你可以根据需要调整宽度 */
+            height: 75px;
+            /* 你可以根据需要调整高度 */
+            /* overflow: hidden; */
+        }
+
+        .logo-1 {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        .logo-2 {
+            position: absolute;
+            width: 43%;
+            height: auto;
+            top: -60%;
+            left: 13.5%;
+        }
+
+        .logo-3 {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
     </style>
     <div class="AwardBackground">
         <div class="CenterPiece">
-            <img aria-label="LAS2024 Logo In A Row" src="/LAS2024/LAS_Row.svg"
-                style="width: 100%; max-width: 360px; object-fit: contain; filter: invert(100%);">
-
-
-            <div class="AwardTitle">
-                <!-- <span>POUR OUT</span> -->
+            <img aria-label="LCAS2024 Logo" src="LCAsBGCh.svg"
+                style="position: fixed; bottom: 10px; right: 10px; width: 80%; max-width: 600px; object-fit: contain; ">
+            <div class="logo-container">
+                <img src="LACSLogoRowC.svg" class="logo-1">
+                <img src="LACSLogoRowB.gif" class="logo-2">
+                <img src="LACSLogoRowA.svg" class="logo-3">
+            </div>
+            <div class="logo-container" style="margin-top: -20px;">
+                <img src="OfficialTopPartnerBar.svg" class="logo-3">
+            </div>
+            <!-- <div class="AwardTitle">
+                <span>POUR OUT</span>
                 <span>——</span>
             </div>
 
@@ -104,18 +145,17 @@
                 <span>——</span>
             </div>
             <div class="AwardTitle">
-                <span>2024.12.30</span>
-            </div>
+                <span>2025.01.30</span>
+            </div> -->
             <div class="AwardTitle">
                 <span>——</span>
             </div>
 
             <img aria-label="The Local Wu Logo"
-                style="height: 50px; object-fit: contain; filter: invert(100%) contrast(10);"
+                style="height: 25px; object-fit: contain; filter: invert(100%) contrast(10) grayscale(1);"
                 src="/stastic/style/logo/logo.svg">
             <br>
-            <br>
-            <span>Heartfelt Recommended By <span style="font-weight: 600; text-decoration: underline;">LASC (Location
+            <span>Heartfelt Deliberated By <span style="font-weight: 600; text-decoration: underline;">LCASC (Location
                     Awards
                     Committee™)</span>.
             </span>
