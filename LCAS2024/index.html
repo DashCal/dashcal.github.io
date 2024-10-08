@@ -23,6 +23,7 @@
             padding: 24px;
             width: fit-content;
             margin: 0 auto;
+            /* z-index: 1; */
         }
 
         .AwardBackground {
@@ -96,6 +97,7 @@
         }
 
         .logo-1 {
+            display: none;
             position: absolute;
             width: 100%;
             height: 100%;
@@ -109,6 +111,7 @@
             height: auto;
             top: -60%;
             left: 13.5%;
+            mix-blend-mode: screen;
         }
 
         .logo-3 {
@@ -117,12 +120,14 @@
             height: 100%;
             top: 0;
             left: 0;
+            mix-blend-mode: screen;
         }
     </style>
     <div class="AwardBackground">
+        <img aria-label="LCAS2024 Logo" src="LCAsBGCh.svg"
+            style="position: fixed; bottom: 10px; right: 10px; width: 80%; max-width: 600px; object-fit: contain; z-index: 0;">
         <div class="CenterPiece">
-            <img aria-label="LCAS2024 Logo" src="LCAsBGCh.svg"
-                style="position: fixed; bottom: 10px; right: 10px; width: 80%; max-width: 600px; object-fit: contain; ">
+
             <div class="logo-container">
                 <img src="LACSLogoRowC.svg" class="logo-1">
                 <img src="LACSLogoRowB.gif" class="logo-2">
@@ -131,16 +136,18 @@
             <div class="logo-container" style="margin-top: -20px;">
                 <img src="OfficialTopPartnerBar.svg" class="logo-3">
             </div>
-            <!-- <div class="AwardTitle">
-                <span>POUR OUT</span>
-                <span>——</span>
-            </div>
 
             <div class="AwardInfo">
                 <span>/ Location Awards 2024 /</span> Is Under Preparing...
                 <br>
                 <span>/ 坐落奖 2024 /</span> 正在筹备中...
             </div>
+            <!-- <div class="AwardTitle">
+                <span>POUR OUT</span>
+                <span>——</span>
+            </div>
+
+            
             <div class="AwardTitle">
                 <span>——</span>
             </div>
@@ -155,12 +162,16 @@
                 style="height: 25px; object-fit: contain; filter: invert(100%) contrast(10) grayscale(1);"
                 src="/stastic/style/logo/logo.svg">
             <br>
-            <span>Heartfelt Deliberated By <span style="font-weight: 600; text-decoration: underline;">LCASC (Location
+
+            <div class="logo-container" style="margin-top: 0px;">
+                <img src="LCAS2024About.svg" class="logo-3">
+            </div>
+            <!-- <span>Heartfelt Deliberated By <span style="font-weight: 600; text-decoration: underline;">LCASC (Location
                     Awards
                     Committee™)</span>.
             </span>
             <br>
-            <span>© 2024 Local Wu. All Rights Reserved.</span>
+            <span>© 2024 Local Wu. All Rights Reserved.</span> -->
             <!-- <div class="PreReserve">
                 <span>Reserve</span>
             </div> -->
