@@ -1,13 +1,13 @@
 @import url("../imports.css");
 
 :root {
-    font-family: Inter, 'Noto_Sans_SC', PingFang SC, 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif;
+    font-family: Inter, 'Noto_Sans', PingFang SC, 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif;
     font-feature-settings: 'liga' 1, 'calt' 1;
     /* fix for Chrome */
 }
 
 @supports (font-variation-settings: normal) {
     :root {
-        font-family: InterVariable, 'Noto_Sans_SC', PingFang SC, 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif;
+        font-family: InterVariable, 'Noto_Sans', PingFang SC, 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif;
     }
 }
