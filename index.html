@@ -4,16 +4,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Local Wu - Passion Drives 热爱使燃</title>
+    <title>...</title>
     <link rel="shortcut icon" href="stastic/style/icon/icon_Regular.png" type="image/png">
     <link rel="icon" sizes="any" mask="" href="stastic/style/icon/icon.svg">
 
     <link rel="stylesheet" href="stastic/style/style.css">
     <link rel="stylesheet" href="Style/Animation/LOCWULoadingSection.css?v=202411290136">
     <script data-goatcounter="https://localwu.goatcounter.com/count" async
-        src="https://localwu.top/script/WebCounter/count.js"></script>
+        src="/script/WebCounter/count.js"></script>
     <script type="text/javascript">
+
+        function DBSF(base64Str) {
+            let padding = base64Str.length % 4 === 0 ? 0 : 4 - (base64Str.length % 4);
+            base64Str += "=".repeat(padding);
+            let binaryString = "";
+            try {
+                binaryString = window.atob(base64Str);
+                let bytes = new Uint8Array(binaryString.length);
+                for (let i = 0; i < binaryString.length; i++)
+                    bytes[i] = binaryString.charCodeAt(i);
+                return new TextDecoder("utf-8").decode(bytes);
+            } catch (error) {
+                return "";
+            }
+        }
+
+        document.title = DBSF('TG9jYWwgV3UgLSBQYXNzaW9uIERyaXZlcyDng63niLHkvb/nh4M=');
+        
         window.onload = function () {
+
+            function traverseAndReplace(element) {
+                // is text node
+                if (element.nodeType === Node.TEXT_NODE) {
+                    element.nodeValue = element.nodeValue.replace(/\$\[LCWREPLACE\]#/g, DBSF('TG9jYWxXdQ=='));
+                    element.nodeValue = element.nodeValue.replace(/\$\[LCSWREPLACE\]#/g, DBSF('TG9jYWwgV3U='));
+                } else {
+                    // Traverse the child nodes
+                    for (let i = 0; i < element.childNodes.length; i++) {
+                        traverseAndReplace(element.childNodes[i]);
+                    }
+                }
+            }
+
+            traverseAndReplace(document.body);
+            
             // Select the element with class "home loading"
             var loadingBlur = document.querySelector('.Home.Loading');
 
@@ -287,7 +321,7 @@
                             src="/stastic/style/logo/logo.svg">
                         <span style="font-weight: 900; min-width: 16px;">™</span>
                     </div>
-                    <span style="font-size: 0.8rem;">© 2024 Local Wu. All Rights Reserved.</span>
+                    <span style="font-size: 0.8rem;">© 2024 $[LCSWREPLACE]#. All Rights Reserved.</span>
                 </div>
             </div>
         </div>
