@@ -9,6 +9,7 @@
     <link rel="icon" sizes="any" mask="" href="stastic/style/icon/icon.svg">
 
     <link rel="stylesheet" href="stastic/style/style.css">
+    <link rel="stylesheet" href="Style/Animation/LOCWULoadingSection">
     <script data-goatcounter="https://localwu.goatcounter.com/count" async
         src="https://localwu.top/script/WebCounter/count.js"></script>
     <script type="text/javascript">
@@ -154,8 +155,7 @@
                 <div class="Icon&Logo" style="display: flex; flex-direction: column;">
                     <img aria-label=" " style="width: 60px; object-fit: contain; margin-left: -6px;"
                         src="/stastic/style/icon/icon.svg">
-                    <img aria-label=" " style="height: 50px; object-fit: contain;"
-                        src="/stastic/style/logo/logo.svg">
+                    <img aria-label=" " style="height: 50px; object-fit: contain;" src="/stastic/style/logo/logo.svg">
                 </div>
                 <div class="FocusN" style="display: flex; flex-direction: column; margin-top: 20px;">
                     <a href="/" style="font-weight: 900;">Home</a>
@@ -283,8 +283,7 @@
                     <span>Drives</span>
                     <div
                         style="display: flex; flex-direction: row; width: 130px; margin: 14px 0 14px 0; margin-left: auto;">
-                        <img aria-label=" "
-                            style="height: 36px; object-fit: contain; margin-left: auto;"
+                        <img aria-label=" " style="height: 36px; object-fit: contain; margin-left: auto;"
                             src="/stastic/style/logo/logo.svg">
                         <span style="font-weight: 900; min-width: 16px;">™</span>
                     </div>
@@ -317,18 +316,32 @@
             transition: opacity 0.5s ease;
         }
     </style>
-    <div class="LoadingCircle Loading" style="position: fixed; top:36%; left: 50%; transform: translateX(-50%);">
+    <!-- LoadingCircle Loading -->
+    <div class="" style="position: fixed; top:36%; left: 50%; transform: translateX(-50%);">
         <div class="LoadingContent"
             style="width: fit-content; height: fit-content; padding: 8px 20px 16px 20px; font-weight: 600;">
-            <div style="width: 80px;height: 80px; margin: 0 auto;">
+            <div style="width: 90px;height: 90px; margin: 0 auto;">
+                <div class="LOCWULoadingSection">
+                    <div class="LOCWULoadingWholeSphere">
+                        <div class="LOCWULoadingSphere">
+                            <div class="LOCWULoadingEarth"></div>
+                            <div class="LOCWULoadingCircle">
+                                <div class="LOCWULoadingNumber" style="--i:1;">
+                                    <span>5</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <!-- background-color: #eee; border: 1px solid #aaa; border-radius: 6px; -->
-                <svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+                <!-- <svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
                     <style>
                         @keyframes spin {
                             to {
                                 transform: rotate(360deg);
                             }
                         }
+
                         .spin {
                             transform-origin: center;
                             animation: spin 1.6s linear infinite;
@@ -338,7 +351,7 @@
                         stroke-dasharray="800 1400" stroke-linecap="round" />
                     <circle class="spin" cx="400" cy="400" fill="none" r="200" stroke-width="40" stroke="#fff"
                         stroke-dasharray="800 1400" stroke-linecap="round" />
-                </svg>
+                </svg> -->
 
             </div>
             <!-- <span>It's Coming...</span>
