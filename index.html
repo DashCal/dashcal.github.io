@@ -9,7 +9,7 @@
     <link rel="icon" sizes="any" mask="" href="stastic/style/icon/icon.svg">
 
     <link rel="stylesheet" href="stastic/style/style.css">
-    <link rel="stylesheet" href="Style/Animation/LOCWULoadingSection.css?v=202411290136">
+    <link rel="stylesheet" href="Style/Animation/LOCWULoadingSection.css?v=202411290330">
     <script data-goatcounter="https://localwu.goatcounter.com/count" async
         src="/script/WebCounter/count.js"></script>
     <script type="text/javascript">
@@ -47,7 +47,8 @@
             }
 
             traverseAndReplace(document.body);
-            
+
+            setTimeOut(function(){
             // Select the element with class "home loading"
             var loadingBlur = document.querySelector('.Home.Loading');
 
@@ -59,7 +60,8 @@
             var loadingCircleElement = document.querySelector('.LoadingCircle');
             if (loadingCircleElement) {
                 loadingCircleElement.parentNode.removeChild(loadingCircleElement);
-            }
+            }  
+            }, 2000);
         };
     </script>
 </head>
